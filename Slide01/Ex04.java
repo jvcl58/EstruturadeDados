@@ -28,10 +28,10 @@ public class Ex04 {
             }
             else{
                 if (v[m] < e) {
-                    i = m;
+                    i = m + 1;
                 }
                 else{
-                    f = m;
+                    f = m - 1;
                 }
             }
             System.out.printf("\n\nInicio: %d Meio: %d Fim: %d", i, m, f);
@@ -44,6 +44,6 @@ public class Ex04 {
         for(int i = 0; i < v.length; i++){
             System.out.print(v[i] + "\t");
         }
-        System.out.println("\n" + buscaBinaria(v, 55));
+        System.out.println("\n" + buscaBinaria(v, 92));
     }
 }
