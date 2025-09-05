@@ -4,8 +4,22 @@
 // a) um vetor criado com os números de 1 até 100 aleatoriamente distribuídos.
 // b) um vetor criado com os números de 1 até 100 ordenados em ordem decrescente.
 
+import java.util.Collections;
+
 public class Ex05 {
-        public static int[] bubbleSort (int[] v){
+    public static int[] preencheVetor(int tamanho) {
+        int v[] = new int[tamanho];
+        for(int i = 0; i < tamanho; i++){
+            v[i] = i + 1;
+        }
+        return v;
+    }
+    public static int[] preencheVetorAleatorio(int tamanho){
+        int v[] = preencheVetor(tamanho);
+        shuffle(v);
+        return v;
+    }
+    public static int[] bubbleSort (int[] v){
         int aux, quantTrocas = 0;
         boolean troca = true;
         while (troca) {
@@ -23,4 +37,5 @@ public class Ex05 {
         System.out.println("Para ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
         return v;
     }
+    // public static int[] 
 }

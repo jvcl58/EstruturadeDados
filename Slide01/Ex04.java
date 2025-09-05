@@ -20,8 +20,8 @@ public class Ex04 {
     }
     
     public static int buscaBinaria (int[] v, int e){
-        int i = 0, f = v.length;
-        while (i < f) {
+        int i = 0, f = v.length - 1;
+        while (i <= f) {
             int m =i + (f - i)/ 2;
             if (v[m] == e) {
                 return m;
