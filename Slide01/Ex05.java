@@ -13,9 +13,6 @@ public class Ex05 {
             System.out.print(v[i] + "\t");
         }
     }
-    public static int[] clonaVetor(int[] v){
-        int c[] = new int[v.length]
-    }
     public static int[] preencheVetorInvertido(int tamanho) {
         int v[] = new int[tamanho];
         for(int i = 0; i < tamanho; i++){
@@ -49,12 +46,17 @@ public class Ex05 {
                 }
             }
         }
-        System.out.println("Para ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
+        System.out.println("\nPara ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
         return v;
+    }
+    public static int[] selectionSort (int[] v){
+        int r[] = new int[v.length];
     }
     // public static int[] 
     public static void main(String[] args) {
-        int v[] = preencheVetorAleatorio(100);
+        int v[] = preencheVetorAleatorio(100), v2[] = v.clone();
         imprimeVetor(v);
+        bubbleSort(v);
+        imprimeVetor(v2);
     }
 }
