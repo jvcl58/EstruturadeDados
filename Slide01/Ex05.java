@@ -4,19 +4,34 @@
 // a) um vetor criado com os números de 1 até 100 aleatoriamente distribuídos.
 // b) um vetor criado com os números de 1 até 100 ordenados em ordem decrescente.
 
-import java.util.Collections;
+import java.util.Random;
 
 public class Ex05 {
-    public static int[] preencheVetor(int tamanho) {
+    public static void imprimeVetor(int[] v){
+        System.out.println();
+        for(int i = 0; i < v.length; i++){
+            System.out.print(v[i] + "\t");
+        }
+    }
+    public static int[] clonaVetor(int[] v){
+        int c[] = new int[v.length]
+    }
+    public static int[] preencheVetorInvertido(int tamanho) {
         int v[] = new int[tamanho];
         for(int i = 0; i < tamanho; i++){
-            v[i] = i + 1;
+            v[i] = tamanho - i;
         }
         return v;
     }
     public static int[] preencheVetorAleatorio(int tamanho){
-        int v[] = preencheVetor(tamanho);
-        shuffle(v);
+        int v[] = new int[tamanho], i = 0, r = 0;
+        Random random = new Random();
+        while (i < tamanho) {
+            r = random.nextInt(tamanho);
+            if (v[r] == 0) {
+                v[r] = ++i;
+            }
+        }
         return v;
     }
     public static int[] bubbleSort (int[] v){
@@ -38,4 +53,8 @@ public class Ex05 {
         return v;
     }
     // public static int[] 
+    public static void main(String[] args) {
+        int v[] = preencheVetorAleatorio(100);
+        imprimeVetor(v);
+    }
 }
