@@ -8,10 +8,11 @@ import java.util.Random;
 
 public class Ex05 {
     public static void imprimeVetor(int[] v){
-        System.out.println();
+        String vetor = "";
         for(int i = 0; i < v.length; i++){
-            System.out.print(v[i] + "\t");
+            vetor += (v[i] + "\t");
         }
+        System.out.println(vetor);
     }
     public static int[] preencheVetorInvertido(int tamanho) {
         int v[] = new int[tamanho];
@@ -46,17 +47,41 @@ public class Ex05 {
                 }
             }
         }
-        System.out.println("\nPara ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
+        System.out.println("[BUBBLE SORT] Para ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
         return v;
     }
     public static int[] selectionSort (int[] v){
-        int r[] = new int[v.length];
+        int aux, m, quantTrocas = 0;
+        for(int i = 0; i < v.length; i++){
+            m = i;
+            for(int j = i + i; j < v.length; j++){
+                if(v[j] < v[i]){
+                    m = j;
+                }
+            }
+            if(v[i] != v[m]){
+                aux = v[m];
+                v[m] = v[i];
+                v[i] = aux;
+                quantTrocas++;
+            }
+        }
+        System.out.println("[SELECT SORT] Para ordenar o vetor, foram feitas " + quantTrocas + " trocas. ");
+        return v;
     }
     // public static int[] 
     public static void main(String[] args) {
-        int v[] = preencheVetorAleatorio(100), v2[] = v.clone();
+        int t = 100, v[] = preencheVetorAleatorio(t), v2[] = v.clone();
         imprimeVetor(v);
         bubbleSort(v);
+        selectionSort(v2);
+        imprimeVetor(v);
+        imprimeVetor(v2);
+        v = preencheVetorInvertido(t); v2 = v.clone();
+        imprimeVetor(v);
+        bubbleSort(v);
+        selectionSort(v2);
+        imprimeVetor(v);
         imprimeVetor(v2);
     }
 }
