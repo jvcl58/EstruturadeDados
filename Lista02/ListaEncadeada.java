@@ -11,24 +11,46 @@ public class ListaEncadeada {
         this.ultimo = 0;
         this.lista = new int[10];
     }
+    public void imprimirLista(){
+        String s = "";
+        for (int i = 1; i + this.primeiro < this.ultimo ; i++){
+            s += this.lista[primeiro + 1] + "\t";
+        }
+        System.out.println(s);
+    }
+
     private void aumentarLista(){
         int v[] = new int[this.lista.length * 2];
         for (int i = 1; i + this.primeiro < this.ultimo ; i++){
-            v[i] = this.lista[i + primeiro];
+            v[i] = this.lista[primeiro + i];
+        }
+        this.lista = v;
+    }
+    private void moverListaDireita() {
+        if (ultimo <= lista.length) {
+            for (int i = 1; i + this.primeiro < this.ultimo ; i++){
+            // v[i] = this.lista[primeiro + i];
+        }
         }
     }
     // 3. Crie um método responsável por inserir um elemento no início da lista.
     public void inserirNoInicio(int elemento){
-        if (primeiro != -1) {
+        if (primeiro != -1 || ultimo - primeiro == 1) {
             this.lista[primeiro] = elemento;
             primeiro--;
         }
         else{
-            
+            // moverListaDireita();
+            inserirNoInicio(elemento);
         }
     }
     // 6. Crie um método responsável por remover um elemento no início da lista.
     public void removerNoInicio(){
         primeiro++;
+    }
+    public static void main(String[] args) {
+        ListaEncadeada l = new ListaEncadeada();
+        l.inserirNoInicio(4);
+        l.imprimirLista();
     }
 }
