@@ -40,8 +40,8 @@ public class ListaEncadeada {
     // 5. Crie um método responsável por inserir um elemento em uma posição
     //    específica da lista.
     public void inserirNoMeio(Node n, int pos){
-        if (pos > tamanho) {
-            System.out.println("Não foi possível inserir na posição desejada. ");
+        if (pos > tamanho || pos <= 0 || tamanho == 0) {
+            System.out.println("(" + n.valor + ":" + pos + ") Não foi possível inserir na posição desejada. \n");
         }
         else{
             Node aux = this.primeiro;
@@ -61,4 +61,25 @@ public class ListaEncadeada {
         inserirNoMeio(n, pos);
     }
     // 6. Crie um método responsável por remover um elemento no início da lista.
+    public void removerNoInicio(){
+        if (tamanho != 0) {
+            this.primeiro = this.primeiro.proximo;
+        }
+    }
+    
+    // 12. Crie um método que retorne o número de elementos existentes na lista.
+    public int quantElementos(){
+        return this.tamanho;
+    }
+    public void imprimirElementos(){
+        System.out.println("Elementos existentes na lista:");
+        if (tamanho !=0) {
+            Node n = this.primeiro;
+            while (n != null) {
+                System.out.println(n.valor);
+                n = n.proximo;
+            }
+        }
+        System.out.println("Fim da lista. \n");
+    }
 }
