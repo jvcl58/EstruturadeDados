@@ -3,10 +3,10 @@
 
 package Lista02;
 
-public class ListaEncadeada {
+public class ListaEncadeadaVetor {
     public int lista[], primeiro, ultimo;
     // 2. Crie um método para criar uma lista vazia.
-    public ListaEncadeada(){
+    public ListaEncadeadaVetor(){
         this.primeiro = 0;
         this.ultimo = 0;
         this.lista = new int[10];
@@ -27,9 +27,9 @@ public class ListaEncadeada {
         this.lista = v;
     }
     private void moverListaDireita() {
-        if (ultimo <= lista.length) {
+        if (ultimo < lista.length) {
             for (int i = 0; i + this.primeiro < this.ultimo ; i++){
-            // v[i] = this.lista[primeiro + i];
+            this.lista[i] = this.lista[primeiro + i];
         }
         }
     }
@@ -49,7 +49,7 @@ public class ListaEncadeada {
             primeiro++;
         }
         public static void main(String[] args) {
-            ListaEncadeada l = new ListaEncadeada();
+            ListaEncadeadaVetor l = new ListaEncadeadaVetor();
             l.inserirNoInicio(4);
             l.imprimirLista();
         }
