@@ -44,14 +44,13 @@ public class ListaEncadeada {
                 
             }
         }
+        // 6. Crie um método responsável por remover um elemento no início da lista.
+        public void removerNoInicio(){
+            primeiro++;
+        }
+        public static void main(String[] args) {
+            ListaEncadeada l = new ListaEncadeada();
+            l.inserirNoInicio(4);
+            l.imprimirLista();
+        }
     }
-    // 6. Crie um método responsável por remover um elemento no início da lista.
-    public void removerNoInicio(){
-        primeiro++;
-    }
-    public static void main(String[] args) {
-        ListaEncadeada l = new ListaEncadeada();
-        l.inserirNoInicio(4);
-        l.imprimirLista();
-    }
-}

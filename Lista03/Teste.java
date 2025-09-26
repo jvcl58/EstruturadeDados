@@ -6,7 +6,9 @@ public class Teste {
         l.inserirNoFinal(10);
         l.imprimirElementos();
         l.inserirNoMeio(1, 0);
-        l.inserirNoMeio(6, 1);
+        l.inserirNoMeio(6, 4);
+        l.removerElemento(3);
+        l.procurarElemento(6);
         l.imprimirElementos();
     }
 }
